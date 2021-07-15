@@ -26,7 +26,7 @@ class HornedBeast extends React.Component {
         <>
           <CardColumns className="cardColumns">
             <Card>
-              <Card.Img variant="top" 
+              <Card.Img onClick={this.addOne} variant="top" 
                 src={this.props.imageUrl} 
                 alt={this.props.description}   
               />
@@ -35,7 +35,6 @@ class HornedBeast extends React.Component {
                 <Card.Text>
                   <p>{this.props.description}</p> 
                   <p>💟{this.state.timesFavorited} times</p>
-                  <button onClick={this.addOne}>Add Favorite</button>
                 </Card.Text>
               </Card.Body>
             </Card>
