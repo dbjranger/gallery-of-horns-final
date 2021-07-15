@@ -8,19 +8,25 @@ import './Main.css';
 
 class Main extends React.Component {
   render() {
-    for (let i = 0; i < 5; i++) {
-    
+    let beastComponentToRender = [];
+
+    data.forEach((beast, index) => {
+      let beastComponent = <HornedBeast
+      key={index}
+      title={beast.title}
+      imageUrl={beast.image_url}
+      description={beast.description}
+      />
+      beastComponentToRender.push(beastComponent)
+      
+    });
+
      return (
        <main>
-        <HornedBeast
-          title={data[i].title}
-          imageUrl={data[i].image_url}
-          description={data[i].description}
-        />
+          {beastComponentToRender}
        </main>
     );
-    }
   }
-}
+};
 
 export default Main;
