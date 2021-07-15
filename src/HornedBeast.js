@@ -1,5 +1,8 @@
 import React from 'react';
 
+import CardColumns from 'react-bootstrap/CardColumns'
+import Card from 'react-bootstrap/Card'
+
 import './HornedBeast.css'
 
 class HornedBeast extends React.Component {
@@ -21,11 +24,29 @@ class HornedBeast extends React.Component {
     return (
       <div className="hornedBeast">
         <>
-          <h2>{this.props.title}</h2>
+          <CardColumns className="cardColumns">
+            <Card>
+              <Card.Img variant="top" 
+                src={this.props.imageUrl} 
+                alt={this.props.description}   
+              />
+              <Card.Body>
+                <Card.Title>{this.props.title}</Card.Title>
+                <Card.Text>
+                  <p>{this.props.description}</p> 
+                  <p>💟{this.state.timesFavorited} times</p>
+                  <button onClick={this.addOne}>Add Favorite</button>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </CardColumns>
+
+
+          {/* <h2>{this.props.title}</h2>
           <img src={this.props.imageUrl} alt={this.props.description}/>
           <p>{this.props.description}</p> 
           <p>💟{this.state.timesFavorited} times</p>
-          <button onClick={this.addOne}>Add Favorite</button>
+          <button onClick={this.addOne}>Add Favorite</button> */}
         </>
       </div>
       
