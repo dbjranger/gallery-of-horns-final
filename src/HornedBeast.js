@@ -10,15 +10,22 @@ class HornedBeast extends React.Component {
     }
   }
 
+  addOne = () => {
+    this.setState({
+      timesFavorited: this.state.timesFavorited + 1,
+    })
+  }
+
   render() {
 
     return (
-      <div>
+      <div className="hornedBeast">
         <>
           <h2>{this.props.title}</h2>
           <img src={this.props.imageUrl} alt={this.props.description}/>
           <p>{this.props.description}</p> 
-          <p>Favorited {this.state.timesFavorited} times</p>
+          <p>💟{this.state.timesFavorited} times</p>
+          <button onClick={this.addOne}>Add Favorite</button>
         </>
       </div>
       
