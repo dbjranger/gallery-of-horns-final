@@ -1,3 +1,6 @@
-div {
-  text-align: center;
+div .hornedBeast {
+  display: inline-block;
+  margin-left: 15px;
+  width: 30%;
+  margin-top: 5px;
 }
