@@ -3,11 +3,7 @@ import React from 'react';
 import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
-import data from './data.json'
-
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-
+import data from './data.json';
 
 import './App.css';
 import SelectedBeast from './SelectedBeast.js';
@@ -22,9 +18,10 @@ class App extends React.Component {
     }
   }
 
-  handleShowModal = () => {
+  handleShowModal = (selectedBeast) => {
     this.setState({
-      showModal: true
+      showModal: true,
+      selectedBeast: selectedBeast
     });
 
   }
@@ -41,8 +38,8 @@ class App extends React.Component {
         <Header 
           title="Horned Beasts"
         />
-        <SelectedBeast showModal={this.state.showModal} handleCloseModal={this.handleCloseModal}/>
-        <Main data={data} handleShowModal={this.handleShowModal}/>
+        <SelectedBeast beast={this.state.selectedBeast} showModal={this.state.showModal} handleCloseModal={this.handleCloseModal}/>
+        <Main data={data} handleShowModalFromApp={this.handleShowModal}/>
         <Footer 
           author="Don Bandy Jr."
         />

@@ -12,16 +12,16 @@ class Main extends React.Component {
       let beastComponent = this.props.data.map((beast, index) => (
         <HornedBeast
           key={index}
-          title={beast.title}
-          imageUrl={beast.image_url}
-          description={beast.description}
-          handleShowModal={this.props.handleShowModal}
+          beast={beast}
+          // title={beast.title}
+          // imageUrl={beast.image_url}
+          // description={beast.description}
+          handleShowModalFromMain={this.props.handleShowModalFromApp}
         />)  
       );
 
      return (
        <main>
-          {/* <SelectedBeast><h2 onClick={this.props.SelectedBeast}></h2></SelectedBeast> */}
           {beastComponent}
        </main>
     );

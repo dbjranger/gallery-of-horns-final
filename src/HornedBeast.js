@@ -26,15 +26,16 @@ class HornedBeast extends React.Component {
         <>
           <CardColumns className="cardColumns">
             <Card>
-              <Card.Img onClick={this.props.handleShowModal} variant="top" 
-                src={this.props.imageUrl} 
-                alt={this.props.description}
-                title={this.props.title}
+              <Card.Img onClick={() => this.props.handleShowModalFromMain(this.props.beast)} variant="top"
+                src={this.props.beast.image_url} 
+                alt={this.props.beast.description}
+                title={this.props.beast.title}
+                key={this.props.key}
               />
               <Card.Body>
-                <Card.Title>{this.props.title}</Card.Title>
+                <Card.Title>{this.props.beast.title}</Card.Title>
                 <Card.Text>
-                  <p>{this.props.description}</p> 
+                  <p>{this.props.beast.description}</p> 
                   <p>💟{this.state.timesFavorited} times</p>
                 </Card.Text>
               </Card.Body>
