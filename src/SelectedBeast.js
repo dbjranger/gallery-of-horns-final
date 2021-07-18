@@ -11,7 +11,9 @@ class SelectedBeast extends React.Component {
           <Modal.Header closeButton>
             <Modal.Title>{this.props.beast.title}</Modal.Title>
           </Modal.Header>
-          <Modal.Body></Modal.Body>
+          <Modal.Body>
+            <img src={this.props.beast.image_url} alt="" />
+          </Modal.Body>
         </Modal>
     );
   }
